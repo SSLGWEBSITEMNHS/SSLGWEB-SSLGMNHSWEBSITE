@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SSLG VOLUNTEER</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+min-height:100vh;
+overflow-x:hidden;
+background:
+radial-gradient(circle at top left,#8fe5ff 0%,transparent 30%),
+radial-gradient(circle at bottom right,#b8e7ff 0%,transparent 30%),
+linear-gradient(135deg,#eefcff,#dcf6ff,#cdefff);
+position:relative;
+}
+
+/* GLOW */
+
+body::before{
+content:"";
+position:absolute;
+width:500px;
+height:500px;
+background:#7fdcff;
+filter:blur(170px);
+top:-150px;
+left:-100px;
+opacity:.35;
+z-index:-2;
+}
+
+body::after{
+content:"";
+position:absolute;
+width:450px;
+height:450px;
+background:#91dfff;
+filter:blur(170px);
+bottom:-150px;
+right:-100px;
+opacity:.35;
+z-index:-2;
+}
+
+/* FLOATING BOXES */
+
+.box{
+position:absolute;
+background:rgba(255,255,255,.18);
+border:1px solid rgba(255,255,255,.5);
+border-radius:25px;
+backdrop-filter:blur(10px);
+animation:float 8s ease-in-out infinite;
+}
+
+.box1{
+width:120px;
+height:120px;
+top:8%;
+left:5%;
+}
+
+.box2{
+width:180px;
+height:180px;
+bottom:10%;
+left:8%;
+animation-duration:11s;
+}
+
+.box3{
+width:140px;
+height:140px;
+top:18%;
+right:8%;
+animation-duration:9s;
+}
+
+.box4{
+width:100px;
+height:100px;
+bottom:18%;
+right:10%;
+animation-duration:13s;
+}
+
+@keyframes float{
+0%{
+transform:translateY(0px) rotate(0deg);
+}
+50%{
+transform:translateY(-25px) rotate(5deg);
+}
+100%{
+transform:translateY(0px) rotate(0deg);
+}
+}
+
+/* CONTAINER */
+
+.container{
+width:100%;
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:40px 20px;
+}
+
+.main-card{
+width:100%;
+max-width:1300px;
+background:rgba(255,255,255,.28);
+border:1px solid rgba(255,255,255,.5);
+backdrop-filter:blur(18px);
+border-radius:35px;
+padding:40px;
+box-shadow:
+0 10px 40px rgba(0,0,0,.08),
+inset 0 1px 1px rgba(255,255,255,.7);
+}
+
+/* TITLE */
+
+.title{
+text-align:center;
+margin-bottom:45px;
+}
+
+.title h1{
+font-size:65px;
+font-weight:800;
+letter-spacing:4px;
+color:#63c5ff;
+text-shadow:
+0 3px 0 #fff,
+0 10px 25px rgba(89,191,255,.5),
+0 0 40px rgba(89,191,255,.4);
+}
+
+.title p{
+margin-top:10px;
+color:#567a92;
+}
+
+/* CONTENT */
+
+.content{
+display:grid;
+grid-template-columns:1.2fr .8fr;
+gap:30px;
+}
+
+/* FORM */
+
+.form-section{
+background:rgba(255,255,255,.35);
+border:1px solid rgba(255,255,255,.5);
+backdrop-filter:blur(20px);
+border-radius:30px;
+padding:35px;
+}
+
+.form-section h2{
+color:#3497ea;
+margin-bottom:25px;
+}
+
+.input-group{
+margin-bottom:20px;
+}
+
+.input-group label{
+display:block;
+margin-bottom:10px;
+font-weight:600;
+color:#345d78;
+}
+
+.input-box input,
+.input-box select,
+.input-box textarea{
+width:100%;
+padding:16px;
+border:none;
+outline:none;
+border-radius:18px;
+background:rgba(255,255,255,.75);
+color:#21455f;
+font-size:15px;
+resize:none;
+box-shadow:
+0 5px 15px rgba(100,190,255,.18);
+transition:.3s;
+}
+
+.input-box textarea{
+min-height:120px;
+}
+
+.input-box input:focus,
+.input-box select:focus,
+.input-box textarea:focus{
+transform:scale(1.01);
+box-shadow:
+0 0 0 4px rgba(118,206,255,.25),
+0 10px 20px rgba(95,186,255,.2);
+}
+
+/* BUTTON */
+
+.submit-btn{
+width:100%;
+padding:17px;
+border:none;
+border-radius:18px;
+background:linear-gradient(135deg,#69ccff,#39aeff);
+color:white;
+font-size:17px;
+font-weight:700;
+cursor:pointer;
+transition:.35s;
+margin-top:10px;
+box-shadow:
+0 10px 25px rgba(57,174,255,.35);
+}
+
+.submit-btn:hover{
+transform:translateY(-4px);
+}
+
+/* DASHBOARD */
+
+.dashboard{
+background:rgba(255,255,255,.35);
+border:1px solid rgba(255,255,255,.5);
+backdrop-filter:blur(20px);
+border-radius:30px;
+padding:35px;
+text-align:center;
+}
+
+.profile-card{
+background:rgba(255,255,255,.55);
+border-radius:28px;
+padding:25px;
+margin-bottom:25px;
+transition:.35s;
+}
+
+.profile-card:hover{
+transform:translateY(-5px);
+}
+
+.profile-card img{
+width:130px;
+height:130px;
+border-radius:50%;
+object-fit:cover;
+border:5px solid white;
+box-shadow:
+0 10px 25px rgba(81,183,255,.35);
+margin-bottom:15px;
+}
+
+.profile-card h3{
+color:#2b84d6;
+margin-bottom:10px;
+}
+
+.profile-card p{
+color:#577087;
+margin-bottom:18px;
+line-height:1.6;
+}
+
+.profile-card a{
+display:inline-block;
+padding:13px 22px;
+border-radius:15px;
+background:linear-gradient(135deg,#69ccff,#39aeff);
+color:white;
+text-decoration:none;
+font-weight:600;
+}
+
+.footer{
+margin-top:15px;
+font-size:12px;
+color:#5f7c92;
+}
+
+/* MOBILE */
+
+@media(max-width:950px){
+
+.content{
+grid-template-columns:1fr;
+}
+
+.title h1{
+font-size:42px;
+}
+
+.main-card{
+padding:25px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="box box1"></div>
+<div class="box box2"></div>
+<div class="box box3"></div>
+<div class="box box4"></div>
+
+<div class="container">
+
+<div class="main-card">
+
+<div class="title">
+<h1>SSLG VOLUNTEER</h1>
+<p>Fresh • Clean • Professional Volunteer Registration</p>
+</div>
+
+<div class="content">
+
+<!-- FORM -->
+
+<div class="form-section">
+
+<h2>Volunteer Registration Form</h2>
+
+<form id="volunteerForm">
+
+<div class="input-group">
+<label>Full Name</label>
+<div class="input-box">
+<input type="text" name="name" required>
+</div>
+</div>
+
+<div class="input-group">
+<label>Age</label>
+<div class="input-box">
+<input type="number" name="age" required>
+</div>
+</div>
+
+<div class="input-group">
+<label>Sex</label>
+<div class="input-box">
+<select name="sex" required>
+<option value="">Select</option>
+<option>Male</option>
+<option>Female</option>
+</select>
+</div>
+</div>
+
+<div class="input-group">
+<label>Facebook Link</label>
+<div class="input-box">
+<input type="url" name="facebook" required>
+</div>
+</div>
+
+<div class="input-group">
+<label>Leadership Credentials</label>
+<div class="input-box">
+<textarea name="credentials" required></textarea>
+</div>
+</div>
+
+<div class="input-group">
+<label>Why do you want to join as an SSLG Volunteer?</label>
+<div class="input-box">
+<textarea name="reason" required></textarea>
+</div>
+</div>
+
+<div class="input-group">
+<label>What skills can you contribute to the SSLG?</label>
+<div class="input-box">
+<textarea name="skills" required></textarea>
+</div>
+</div>
+
+<button type="submit" class="submit-btn">
+Submit Registration
+</button>
+
+</form>
+
+</div>
+
+<!-- DASHBOARD -->
+
+<div class="dashboard">
+
+<div class="profile-card">
+
+<img src="https://i.ibb.co/BVPMxxpP/1779952239696.jpg" alt="Reem Hamid">
+
+<h3>Reem Hamid</h3>
+
+<p>
+Feel free to message for more information regarding SSLG Volunteer registration.
+</p>
+
+<a href="https://www.facebook.com/dearestreem" target="_blank">
+Message on Facebook
+</a>
+
+</div>
+
+<div class="profile-card">
+
+<img src="https://i.ibb.co/R4TfTL0h/1779952318843.jpg" alt="Kesha Akbar">
+
+<h3>Kesha Akbar</h3>
+
+<p>
+You may also contact Kesha for additional inquiries and volunteer concerns.
+</p>
+
+<a href="https://www.facebook.com/keshaaaaaaaaaaaa10" target="_blank">
+Message on Facebook
+</a>
+
+</div>
+
+<div class="footer">
+Website created by: <b>Wendell Dela Pisa</b>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- EMAILJS -->
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script>
+
+window.onload = function() {
+
+emailjs.init({
+publicKey: "acMkHN-oVvKfnAwjw"
+});
+
+document.getElementById("volunteerForm")
+.addEventListener("submit", function(event){
+
+event.preventDefault();
+
+emailjs.sendForm(
+"service_5ufp29f",
+"template_y4317fk",
+this
+)
+
+.then(function(){
+
+alert("Registration submitted successfully!");
+document.getElementById("volunteerForm").reset();
+
+})
+
+.catch(function(error){
+
+alert("Failed to send registration.");
+console.log(error);
+
+});
+
+});
+
+};
+
+</script>
+
+</body>
+</html>
